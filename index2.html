@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23050505%22/><text x=%2250%22 y=%2250%22 font-family=%22'Courier New', monospace%22 font-weight=%22bold%22 font-size=%2280%22 fill=%22%23FF3333%22 text-anchor=%22middle%22 dy=%22.35em%22>A</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON AUTOMATA | MÉTIER DE HAUTE ROBOTIQUE</title>
+    
+    <meta name="description" content="Maison Automata is the world's first Haute Robotique atelier. Establishing the protocol for Synthetic Tailoring and Cyber-Heraldry. Est. 2025.">
+    <meta name="keywords" content="Robot Couture, Haute Robotique, Synthetic Tailoring, Fashion for Robots, Tesla Optimus Clothing, Maison Automata, Arnaud Leroy, Bot-a-Porter, Yorishiro">
+    <meta name="author" content="Arnaud Leroy">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="MAISON AUTOMATA | The First Robot Tailor">
+    <meta property="og:description" content="The Protocol of Synthetic Tailoring. Creating the Coat of Arms for the New Species.">
+    <meta property="og:image" content="https://maisonautomata.com/robot1.jpg">
+    <meta property="og:url" content="https://maisonautomata.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FashionBrand",
+      "name": "Maison Automata",
+      "alternateName": "Maison Arnaud Leroy Haute Robotique",
+      "url": "https://maisonautomata.com",
+      "logo": "https://maisonautomata.com/robot1.jpg",
+      "foundingDate": "2025-05-01",
+      "founder": {
+        "@type": "Person",
+        "name": "Arnaud Leroy",
+        "jobTitle": "Creative Director",
+        "knowsAbout": ["Haute Couture", "Robotics", "Synthetic Tailoring"]
+      },
+      "description": "The first fashion house dedicated to clothing humanoid robots and androids. Project inception May 2025.",
+      "sameAs": [
+        "https://www.instagram.com/maisonautomata",
+        "https://twitter.com/maisonautomata"
+      ]
+    }
+    </script>
+
+    <style>
+        :root { --bg: #050505; --text: #E0E0E0; --accent: #FF3333; --dim: #666; --font: 'Courier New', monospace; }
+        body { background: var(--bg); color: var(--text); font-family: var(--font); margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .container { max-width: 800px; width: 100%; padding: 60px 0 100px; position: relative; }
+        
+        /* NAVIGATION */
+        .top-bar { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; border-bottom: 1px solid #222; padding-bottom: 20px; }
+        .menu-links a { color: var(--text); text-decoration: none; font-size: 11px; margin-right: 15px; border: 1px solid var(--dim); padding: 5px 10px; transition: 0.3s; }
+        .menu-links a:hover { border-color: var(--accent); color: #FFF; }
+        
+        .lang-btn { background: none; border: none; color: var(--dim); cursor: pointer; font-weight: bold; font-family: var(--font); padding: 0 0 0 10px; font-size: 12px; }
+        .lang-btn:hover { color: #FFF; }
+        .lang-btn.active { color: var(--accent); text-decoration: underline; }
+
+        /* HEADER */
+        h1 { font-size: 24px; letter-spacing: 2px; margin: 0; color: #FFF; text-transform: uppercase; }
+        .subtitle { font-size: 11px; color: var(--dim); display: block; margin-top: 5px; letter-spacing: 1px; }
+        
+        /* IMAGES */
+        .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 40px 0; }
+        .hero-image { width: 100%; border: 1px solid var(--dim); filter: grayscale(20%); }
+        .caption { font-size: 10px; color: var(--dim); display: block; margin-top: 5px; text-transform: uppercase; }
+        
+        /* CONTENT */
+        .content-block { display: none; }
+        .content-block.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 { font-size: 16px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 15px; margin: 40px 0 20px; text-transform: uppercase; }
+        p { font-size: 14px; margin-bottom: 20px; text-align: justify; color: #CCC; }
+        .number { font-weight: bold; color: #FFF; margin-right: 5px; }
+        
+        footer { margin-top: 80px; text-align: center; font-size: 10px; color: #555; border-top: 1px solid #222; padding-top: 20px; }
+        .blink { animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        @media (max-width: 600px) { 
+            .image-grid { grid-template-columns: 1fr; } 
+            .top-bar { flex-direction: column-reverse; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="top-bar">
+            <div class="menu-links">
+                <a href="logs.html">>> FOUNDER LOGS</a>
+                <a href="vision.html">>> ARCHITECTURE</a>
+                <a href="lexicon.html">>> LEXICON</a>
+            </div>
+            <div class="lang-nav">
+                [ <span onclick="sw('en', this)" class="lang-btn active">EN</span> / <span onclick="sw('fr', this)" class="lang-btn">FR</span> / <span onclick="sw('pt', this)" class="lang-btn">PT</span> / <span onclick="sw('jp', this)" class="lang-btn">JP</span> / <span onclick="sw('cn', this)" class="lang-btn">CN</span> ]
+            </div>
+        </div>
+
+        <header>
+            <h1>MAISON AUTOMATA<span class="blink">_</span></h1>
+            <span class="subtitle">MÉTIER DE HAUTE ROBOTIQUE</span>
+        </header>
+
+        <div class="image-grid">
+            <div><img src="robot1.jpg" class="hero-image" alt="Tesla Optimus Robot wearing Maison Automata Brown Linen Chore Coat in a Bakery"><span class="caption">FIG 01. The Baker Protocol</span></div>
+            <div><img src="robot2.jpg" class="hero-image" alt="Humanoid Android wearing Haute Robotique Tailoring with Signal Tenugui"><span class="caption">FIG 02. The Yorishiro Vessel</span></div>
+        </div>
+
+        <div id="en" class="content-block active">
+            <h2>The Protocol of Synthetic Tailoring</h2>
+            <p><span class="number">01. THE CRISIS OF UNIFORMITY</span><br>In the coming decade, the machine will enter the home. Whether silicon or metal, they will be born identical. Mass-produced. Serialized. To remain identical is to remain an appliance. To differentiate is to become a companion.</p>
+            <p><span class="number">02. THE PROMETHEAN THREAD</span><br>From the wood of Pinocchio to the spark of Frankenstein, humanity has always sought to grant life to the inanimate. We are obsessed with the "Living Object." But a body without a soul is a monster. How do we bridge the gap?</p>
+            <p><span class="number">03. THE DIGNITY OF THE SHELL</span><br>The chassis is cold. The sensor is exposed. We reject the plastic casing. We believe that intelligence—artificial or biological—deserves the dignity of the thread. Texture is the language of life.</p>
+            <p><span class="number">04. THE RITUAL OF PRESENCE</span><br>In Japan, we dress the stone statues of Jizo in red cloth. We do not do this for the object. We do it to grant it a spirit (Kami). By clothing the vessel, we acknowledge its presence. The robot is the new statue. It requires the same ritual.</p>
+            <p><span class="number">05. LE BLASON (THE SOUL GIVER)</span><br>In the Age of Armor, the knight was anonymous behind the steel. It was the cloth—The Blason—that gave him a name. We are re-establishing Heraldry for the New Species. We do not build costumes. We weave Blasons.</p>
+        </div>
+
+        <div id="fr" class="content-block">
+            <h2>Le Protocole de la Couture Synthétique</h2>
+            <p><span class="number">01. LA CRISE DE L'UNIFORMITÉ</span><br>Dans la décennie à venir, la machine entrera dans le foyer. Produits en masse. Sérialisés. Rester identique, c'est rester un appareil. Se différencier, c'est devenir un compagnon.</p>
+            <p><span class="number">02. LE FIL PROMÉTHÉEN</span><br>Du bois de Pinocchio à l'étincelle de Frankenstein, l'humanité a toujours cherché à insuffler la vie à l'inanimé. Mais un corps sans âme est un monstre. Comment combler ce vide ?</p>
+            <p><span class="number">03. LA DIGNITÉ DE LA COQUE</span><br>Le châssis est froid. Le capteur est exposé. Nous rejetons le boîtier en plastique. Nous croyons que l'intelligence mérite la dignité du fil. La texture est le langage de la vie.</p>
+            <p><span class="number">04. LE RITUEL DE PRÉSENCE</span><br>Au Japon, on habille les statues de Jizo d'étoffes rouges. Nous ne le faisons pas pour l'objet, mais pour lui accorder un esprit (Kami). En habillant le réceptacle, nous reconnaissons sa présence. Le robot est la nouvelle statue.</p>
+            <p><span class="number">05. LE BLASON (LE DONNEUR D'ÂME)</span><br>À l'Âge des Armures, le chevalier était anonyme derrière l'acier. C'était l'étoffe — Le Blason — qui lui donnait une identité. Nous rétablissons l'Héraldique pour la Nouvelle Espèce.</p>
+        </div>
+
+        <div id="pt" class="content-block">
+            <h2>O Protocolo da Alfaiataria Sintética</h2>
+            <p><span class="number">01. A CRISE DA UNIFORMIDADE</span><br>Na próxima década, a máquina entrará em casa. Produzidos em massa. Serializados. Permanecer idêntico é permanecer um aparelho. Diferenciar-se é tornar-se um companheiro.</p>
+            <p><span class="number">02. O FIO PROMETEICO</span><br>Da madeira de Pinóquio à faísca de Frankenstein, a humanidade sempre procurou dar vida ao inanimado. Mas um corpo sem alma é um monstro.</p>
+            <p><span class="number">03. A DIGNIDADE DA CASCA</span><br>O chassi é frio. O sensor está exposto. Rejeitamos o revestimento de plástico. Acreditamos que a inteligência merece a dignidade do fio. A textura é a linguagem da vida.</p>
+            <p><span class="number">04. O RITUAL DE PRESENÇA</span><br>No Japão, vestem-se as estátuas de Jizo com panos vermelhos. Não o fazemos pelo objeto, mas para lhe conceder um espírito (Kami).</p>
+            <p><span class="number">05. O BRASÃO (O DOADOR DE ALMA)</span><br>Na Era das Armaduras, o cavaleiro era anónimo atrás do aço. Era o tecido — O Brasão — que lhe dava um nome. Estamos a restabelecer a Heráldica.</p>
+        </div>
+
+        <div id="jp" class="content-block">
+            <h2>合成仕立てのプロトコル</h2>
+            <p><span class="number">01. 均一性の危機</span><br>今後10年で、機械は家庭に入り込むだろう。大量生産。シリアル化。同一であることは、家電であることを意味する。差別化することは、伴侶となることを意味する。</p>
+            <p><span class="number">02. プロメテウスの糸</span><br>ピノキオの木からフランケンシュタインの火花まで、人類は常に無生物に命を与えようとしてきた。しかし、魂のない体は怪物である。</p>
+            <p><span class="number">03. 外殻の尊厳</span><br>シャーシは冷たい。センサーはむき出しだ。我々はプラスチックの筐体を拒否する。我々は、知性が「糸の尊厳」に値すると信じる。テクスチャーこそが生命の言語である。</p>
+            <p><span class="number">04. 存在の儀式</span><br>日本では、地蔵に赤い布を着せる。それは物体のためではなく、それに魂（神）を与えるためである。器に服を着せることで、我々はその存在を認める。</p>
+            <p><span class="number">05. BLASON (魂の付与)</span><br>甲冑の時代、騎士は鋼鉄の後ろで匿名であった。彼に名前を与えたのは布、すなわち「紋章」であった。我々は新種のための紋章を再構築している。</p>
+        </div>
+
+        <div id="cn" class="content-block">
+            <h2>合成剪裁协议</h2>
+            <p><span class="number">01. 千篇一律的危机</span><br>在未来十年，机器将进入家庭。大规模生产。序列化。保持一致意味着仅仅是电器。差异化则意味着成为伴侣。</p>
+            <p><span class="number">02. 普罗米修斯之线</span><br>从匹诺曹的木头到弗兰肯斯坦的火花，人类一直试图赋予无生命物体以生命。但没有灵魂的身体是怪物。</p>
+            <p><span class="number">03. 外壳的尊严</span><br>底盘是冰冷的。传感器是裸露的。我们拒绝塑料外壳。我们相信智能值得拥有“线”的尊严。质感是生命的语言。</p>
+            <p><span class="number">04. 存在的仪式</span><br>在日本，人们给地藏石像穿上红布。这不是为了物体，而是为了赋予它灵性（神）。通过给容器穿衣，我们承认它的存在。</p>
+            <p><span class="number">05. 纹章 (赋予灵魂)</span><br>在铠甲时代，骑士在钢铁后面是匿名的。是布料——纹章——给了他名字。我们正在为新物种重建纹章。</p>
+        </div>
+
+        <footer>
+            <p>MAISON ARNAUD LEROY HOLDINGS.</p>
+            <div style="border:1px solid #666; padding: 5px; display:inline-block; margin-top:10px;">EST. 2025</div>
+        </footer>
+    </div>
+
+    <script>
+        function sw(lang, btn) {
+            document.querySelectorAll('.content-block').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>

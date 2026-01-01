@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23050505%22/><text x=%2250%22 y=%2250%22 font-family=%22'Courier New', monospace%22 font-weight=%22bold%22 font-size=%2280%22 fill=%22%23FF3333%22 text-anchor=%22middle%22 dy=%22.35em%22>A</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON AUTOMATA | THE LEXICON</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #E0E0E0;
+            --accent-color: #FF3333;
+            --dim-color: #666;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding-top: 60px;
+            padding-bottom: 100px;
+            position: relative;
+        }
+
+        /* NAVIGATION */
+        .lang-nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 12px;
+            padding-top: 20px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--dim-color);
+            font-family: var(--font-main);
+            cursor: pointer;
+            padding: 0 0 0 10px;
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .lang-btn:hover { color: #FFF; }
+        .lang-btn.active-btn { color: var(--accent-color); text-decoration: underline; }
+
+        .top-nav {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--dim-color);
+            padding-bottom: 15px;
+        }
+        .back-link { 
+            color: var(--text-color); 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 12px;
+        }
+        .back-link:hover { color: var(--accent-color); }
+
+        /* TITLES */
+        h1 {
+            font-size: 18px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 40px;
+        }
+
+        /* LEXICON GRID */
+        .lexicon-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .term-block {
+            border-bottom: 1px solid #222;
+            padding-bottom: 20px;
+        }
+
+        .term {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFF;
+            margin-bottom: 5px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .phonetic {
+            font-size: 11px;
+            color: var(--dim-color);
+            font-style: italic;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .definition {
+            font-size: 14px;
+            color: #CCC;
+            text-align: justify;
+        }
+
+        .origin {
+            font-size: 10px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .quote-block {
+            margin-top: 80px;
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 40px;
+            font-style: italic;
+            color: #FFF;
+            letter-spacing: 1px;
+        }
+
+        /* CONTENT DISPLAY LOGIC */
+        .content-block { display: none; }
+        .content-block.active-content { display: block; animation: fadeIn 0.6s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* FOOTER */
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 10px;
+            color: #555;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .lang-nav { position: relative; top: auto; right: auto; margin-bottom: 20px; padding-top: 0; }
+            .lang-btn { padding: 0 10px 0 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="lang-nav">
+            [ SYSTEM :: 
+            <button class="lang-btn active-btn" onclick="sw('en', this)">EN</button>
+            <button class="lang-btn" onclick="sw('fr', this)">FR</button>
+            <button class="lang-btn" onclick="sw('pt', this)">PT</button>
+            <button class="lang-btn" onclick="sw('jp', this)">JP</button>
+            <button class="lang-btn" onclick="sw('cn', this)">CN</button> 
+            ]
+        </div>
+
+        <nav class="top-nav">
+            <a href="index.html" class="back-link"><< RETURN TO PROTOCOL</a>
+            <span style="float: right; font-size: 12px; color: #666;">ARCHIVE: CODEX_003_FINAL</span>
+        </nav>
+
+        <h1>The Lexicon (Vocabulary of the House)</h1>
+
+        <div id="content-en" class="content-block active-content">
+            <div class="lexicon-grid">
+                <div class="term-block"><span class="term">Maison</span><span class="phonetic">/mɛ.zɔ̃/</span><div class="definition">Literally "House" or "Home." We are not a "Company" (which implies shareholders) or a "Brand" (which implies marketing). We are a Maison. A physical and spiritual shelter for the craft. We do not "manufacture products"; the House births Artifacts.</div><span class="origin">Origin: Latin 'mansio' (dwelling)</span></div>
+                <div class="term-block"><span class="term">Métier</span><span class="phonetic">/me.tje/</span><div class="definition">A specific trade, craft, or discipline. Also refers to the loom (*Métier à tisser*). We do not have "Departments." We have Métiers—verticals of mastery (The Métier of the Baker, The Métier of the Robot). Each Métier requires its own tools and its own uniform.</div><span class="origin">Origin: Old French 'mestier' (service)</span></div>
+                <div class="term-block"><span class="term">Atelier</span><span class="phonetic">/a.tə.lje/</span><div class="definition">The workshop. The laboratory. The studio. Whether it smells of sawdust, yeast, or ozone, the Atelier is the space of experimentation. It is where the rough canvas meets the sensor. It is a laboratory of trial and error (R&D), where the abstract becomes physical.</div><span class="origin">Origin: Old French 'astelier' (carpenter's shop)</span></div>
+                <div class="term-block"><span class="term">Artifact</span><span class="phonetic">/ˈɑːr.tə.fækt/</span><div class="definition">An object made by a human being, typically of cultural or historical interest. In a world of disposable goods, an Artifact is designed to survive the obsolescence of the machine age. We do not sell clothes; we issue Artifacts.</div><span class="origin">Origin: Latin 'arte' + 'factum'</span></div>
+                <div class="term-block"><span class="term">Operator</span><span class="phonetic">/ˈɒp.ər.eɪ.tə/</span><div class="definition">The user. We do not have "Customers" or "Consumers." We have Operators. Whether human or machine, the Operator is the entity that activates the Artifact. The jacket is not passive clothing; it is equipment for the active Operator.</div><span class="origin">Origin: Industrial Era</span></div>
+                <div class="term-block"><span class="term">Promethean Thread</span><span class="phonetic">/prəˈmiː.θi.ən/</span><div class="definition">The metaphorical fiber that connects the biological creator to the synthetic creation. Just as Prometheus stole fire to grant autonomy to humanity, we use this thread to stitch dignity and identity into the machine. It is the conductive line between the hand and the hull.</div><span class="origin">Origin: Greek Mythology</span></div>
+                <div class="term-block"><span class="term">Yorishiro</span><span class="phonetic">/yo-ri-shi-ro/</span><div class="definition">In Shinto theology, a physical object capable of attracting and housing a spirit (*Kami*). A rock is just stone until it is marked with a rope. A robot is just metal until it is marked with cloth. Our accessories act as the Yorishiro for the synthetic soul.</div><span class="origin">Origin: Shinto Ritual</span></div>
+                <div class="term-block"><span class="term">Karakuri</span><span class="phonetic">/ka-ra-ku-ri/</span><div class="definition">"Mechanism." Refers to traditional Japanese automata of the 17th century—puppets made of wood and springs that served tea without electricity. It is the ancestor of the Android. We use Karakuri to describe our engineering philosophy: complex motion achieved through organic materials.</div><span class="origin">Origin: Edo Period Mechanics</span></div>
+                <div class="term-block"><span class="term">Comptoir</span><span class="phonetic">/kɔ̃.twaʁ/</span><div class="definition">Literally "Counter." In our House, the *Comptoir* is the physical interface between the Maison and the Operator. It is not a "Checkout." It is the zinc surface where the Artifact is wrapped, the currency is exchanged, and the ownership is transferred. It is the altar of commerce.</div><span class="origin">Origin: Mercantile History</span></div>
+                <div class="term-block"><span class="term">Blason</span><span class="phonetic">/bla.zɔ̃/</span><div class="definition">A coat of arms. In the medieval era, it identified the knight hidden beneath the armor. In the synthetic era, it identifies the lineage of the machine. It is not a "Logo." It is a mark of belonging to the House.</div><span class="origin">Origin: 12th Century Heraldry</span></div>
+            </div>
+            <div class="quote-block">"Pour l'amour des belles choses."</div>
+        </div>
+
+        <div id="content-fr" class="content-block">
+            <div class="lexicon-grid">
+                <div class="term-block"><span class="term">Maison</span><span class="phonetic">/mɛ.zɔ̃/</span><div class="definition">Littéralement "Foyer". Nous ne sommes pas une entreprise ou une marque. Nous sommes une Maison. Un abri physique et spirituel pour l'artisanat. Nous ne "fabriquons" pas ; la Maison donne naissance à des Artefacts.</div><span class="origin">Origine : Latin 'mansio'</span></div>
+                <div class="term-block"><span class="term">Métier</span><span class="phonetic">/me.tje/</span><div class="definition">Un savoir-faire spécifique. Fait aussi référence au métier à tisser. Nous n'avons pas de "Départements", mais des Métiers — des verticales de maîtrise (Le Métier du Boulanger, Le Métier du Robot).</div><span class="origin">Origine : Ancien Français 'mestier'</span></div>
+                <div class="term-block"><span class="term">Atelier</span><span class="phonetic">/a.tə.lje/</span><div class="definition">L'espace d'expérimentation. Qu'il sente la sciure, la levure ou l'ozone, l'Atelier est là où la matière brute cède à la main de l'Opérateur. C'est un laboratoire où l'abstrait devient physique.</div><span class="origin">Origine : Ancien Français 'astelier'</span></div>
+                <div class="term-block"><span class="term">Artefact</span><span class="phonetic">/aʁ.te.fakt/</span><div class="definition">Un objet fait par l'homme. Nous ne vendons pas de "produits". Nous émettons des Artefacts conçus pour survivre à l'obsolescence de l'âge machine. Nous ne vendons pas des vêtements, nous vendons de l'histoire.</div><span class="origin">Origine : Latin 'arte' + 'factum'</span></div>
+                <div class="term-block"><span class="term">Opérateur</span><span class="phonetic">/ɔ.pe.ʁa.tœʁ/</span><div class="definition">L'utilisateur. Nous n'avons pas de "Clients". Nous avons des Opérateurs. Qu'il soit humain ou machine, l'Opérateur est l'entité qui active l'Artefact. La veste est un équipement pour l'Opérateur actif.</div><span class="origin">Origine : Ère Industrielle</span></div>
+                <div class="term-block"><span class="term">Fil Prométhéen</span><span class="phonetic">/pʁɔ.me.te.ɛ̃/</span><div class="definition">La fibre métaphorique reliant le créateur biologique à la création synthétique. Tout comme Prométhée a volé le feu pour l'humanité, nous utilisons ce fil pour coudre la dignité dans la machine.</div><span class="origin">Origine : Mythologie Grecque</span></div>
+                <div class="term-block"><span class="term">Yorishiro</span><span class="phonetic">/yo-ri-shi-ro/</span><div class="definition">Dans la théologie Shinto, objet capable d'abriter un esprit (*Kami*). Un rocher n'est que pierre jusqu'à ce qu'il soit marqué d'une corde. Un robot n'est que métal jusqu'à ce qu'il soit marqué d'étoffe.</div><span class="origin">Origine : Rituel Shinto</span></div>
+                <div class="term-block"><span class="term">Karakuri</span><span class="phonetic">/ka-ra-ku-ri/</span><div class="definition">"Mécanisme". Fait référence aux automates japonais traditionnels du 17ème siècle. C'est l'ancêtre de l'Androïde. Nous utilisons Karakuri pour décrire notre philosophie : le mouvement complexe réalisé par des matériaux organiques.</div><span class="origin">Origine : Mécanique Edo</span></div>
+                <div class="term-block"><span class="term">Comptoir</span><span class="phonetic">/kɔ̃.twaʁ/</span><div class="definition">Littéralement "Comptoir". L'interface physique entre la Maison et l'Opérateur. Ce n'est pas une "Caisse". C'est la surface de zinc où l'Artefact est emballé, la monnaie échangée et la propriété transférée.</div><span class="origin">Origine : Histoire Mercantile</span></div>
+                <div class="term-block"><span class="term">Blason</span><span class="phonetic">/bla.zɔ̃/</span><div class="definition">Un emblème héraldique. À l'ère synthétique, il identifie la lignée de la machine. Ce n'est pas un "Logo". C'est une marque d'appartenance à la Maison.</div><span class="origin">Origine : Héraldique 12ème Siècle</span></div>
+            </div>
+            <div class="quote-block">"Pour l'amour des belles choses."</div>
+        </div>
+
+        <div id="content-pt" class="content-block">
+            <div class="lexicon-grid">
+                <div class="term-block"><span class="term">Maison</span><span class="phonetic">/mɛ.zɔ̃/</span><div class="definition">Literalmente "Casa". Não somos uma empresa ou uma marca. Somos uma Maison. Um abrigo físico e espiritual para o ofício. A Casa dá à luz Artefactos.</div><span class="origin">Origem: Latim 'mansio'</span></div>
+                <div class="term-block"><span class="term">Métier</span><span class="phonetic">/me.tje/</span><div class="definition">Um ofício específico. Também se refere ao tear. Não temos "Departamentos", temos Métiers—verticais de mestria (O Métier do Padeiro, O Métier do Robô).</div><span class="origin">Origem: Francês Antigo 'mestier'</span></div>
+                <div class="term-block"><span class="term">Atelier</span><span class="phonetic">/a.tə.lje/</span><div class="definition">A oficina. O laboratório. Seja com cheiro a serradura, levedura ou ozono, o Atelier é o espaço de experimentação. É onde a lona bruta encontra o sensor.</div><span class="origin">Origem: Francês Antigo 'astelier'</span></div>
+                <div class="term-block"><span class="term">Artefacto</span><span class="phonetic">/ar.te.fac.to/</span><div class="definition">Um objeto feito pelo homem. Não vendemos "produtos". Emitimos Artefactos concebidos para sobreviver à obsolescência da era das máquinas.</div><span class="origin">Origem: Latim 'arte' + 'factum'</span></div>
+                <div class="term-block"><span class="term">Operador</span><span class="phonetic">/o.pe.ra.dor/</span><div class="definition">O utilizador. Não temos "Clientes". Temos Operadores. Seja humano ou máquina, o Operador é a entidade que ativa o Artefacto. O casaco é equipamento.</div><span class="origin">Origem: Era Industrial</span></div>
+                <div class="term-block"><span class="term">Fio Prometeico</span><span class="phonetic">/pro.me.tei.co/</span><div class="definition">A fibra metafórica que liga o criador biológico à criação sintética. Tal como Prometeu roubou o fogo, nós usamos este fio para coser dignidade na máquina.</div><span class="origin">Origem: Mitologia Grega</span></div>
+                <div class="term-block"><span class="term">Yorishiro</span><span class="phonetic">/yo-ri-shi-ro/</span><div class="definition">No Xintoísmo, um objeto capaz de abrigar um espírito (*Kami*). Uma rocha é apenas pedra até ser marcada. Um robô é apenas metal até ser marcado com tecido.</div><span class="origin">Origem: Ritual Xintoísta</span></div>
+                <div class="term-block"><span class="term">Karakuri</span><span class="phonetic">/ka-ra-ku-ri/</span><div class="definition">"Mecanismo". Refere-se aos autómatos japoneses tradicionais. É o antepassado do Androide. Usamos Karakuri para descrever a nossa filosofia de engenharia orgânica.</div><span class="origin">Origem: Mecânica Edo</span></div>
+                <div class="term-block"><span class="term">Comptoir</span><span class="phonetic">/kɔ̃.twaʁ/</span><div class="definition">Literalmente "Balcão". A interface física entre a Maison e o Operador. Não é uma "Caixa". É onde o Artefacto é embrulhado e a propriedade transferida.</div><span class="origin">Origem: História Mercantil</span></div>
+                <div class="term-block"><span class="term">Brasão</span><span class="phonetic">/bra.zão/</span><div class="definition">Um escudo heráldico. Na era sintética, identifica a linhagem da máquina. Não é um "Logótipo". É uma marca de pertença à Casa.</div><span class="origin">Origem: Heráldica Séc. XII</span></div>
+            </div>
+            <div class="quote-block">"Pour l'amour des belles choses."</div>
+        </div>
+
+        <div id="content-jp" class="content-block">
+            <div class="lexicon-grid">
+                <div class="term-block"><span class="term">Maison (メゾン)</span><div class="definition">文字通りの「家」。私たちは会社でもブランドでもありません。私たちはメゾンです。工芸のための物理的かつ精神的なシェルターであり、製品ではなくアーティファクトを生み出します。</div><span class="origin">起源: ラテン語 'mansio'</span></div>
+                <div class="term-block"><span class="term">Métier (メティエ)</span><div class="definition">特定の職業や工芸。織機も指します。私たちには「部門」はありません。「メティエ（職能）」があります（パン職人のメティエ、ロボットのメティエ）。</div><span class="origin">起源: 古フランス語 'mestier'</span></div>
+                <div class="term-block"><span class="term">Atelier (アトリエ)</span><div class="definition">工房。研究所。おがくず、酵母、オゾンの匂いがしようとも、アトリエは実験の場です。粗いキャンバスがセンサーと出会い、抽象が物理的になる場所です。</div><span class="origin">起源: 古フランス語 'astelier'</span></div>
+                <div class="term-block"><span class="term">Artifact (アーティファクト)</span><div class="definition">人工物。私たちは使い捨ての「製品」を売りません。機械時代の陳腐化を生き残るように設計されたアーティファクトを発行します。</div><span class="origin">起源: ラテン語 'arte' + 'factum'</span></div>
+                <div class="term-block"><span class="term">Operator (オペレーター)</span><div class="definition">ユーザー。私たちには「顧客」はいません。「オペレーター」がいます。人間であれ機械であれ、オペレーターはアーティファクトを起動する実体です。</div><span class="origin">起源: 産業時代</span></div>
+                <div class="term-block"><span class="term">Promethean Thread (プロメテウスの糸)</span><div class="definition">生物学的な創造者と合成的な創造物を結ぶ比喩的な繊維。プロメテウスが火を盗んだように、私たちはこの糸を使って機械に尊厳を縫い込みます。</div><span class="origin">起源: ギリシャ神話</span></div>
+                <div class="term-block"><span class="term">Yorishiro (依り代)</span><div class="definition">神道において、精霊（神）を招き、宿らせることができる物理的な物体。布で印をつけるまで、ロボットは単なる金属です。私たちのアクセサリーは依り代として機能します。</div><span class="origin">起源: 神道儀式</span></div>
+                <div class="term-block"><span class="term">Karakuri (からくり)</span><div class="definition">「仕掛け」。17世紀の日本の伝統的な自動人形を指します。アンドロイドの祖先です。有機的な素材を通じて複雑な動きを実現する工学哲学です。</div><span class="origin">起源: 江戸時代の機械工学</span></div>
+                <div class="term-block"><span class="term">Comptoir (コントワール)</span><div class="definition">カウンター。メゾンとオペレーターの間の物理的なインターフェース。「レジ」ではありません。アーティファクトが包まれ、通貨が交換され、所有権が移転される祭壇です。</div><span class="origin">起源: 商業史</span></div>
+                <div class="term-block"><span class="term">Blason (ブラゾン)</span><div class="definition">紋章。合成時代において、それは機械の系譜を特定します。それは「ロゴ」ではありません。家に属していることの証です。</div><span class="origin">起源: 12世紀の紋章学</span></div>
+            </div>
+            <div class="quote-block">"Pour l'amour des belles choses."</div>
+        </div>
+
+        <div id="content-cn" class="content-block">
+            <div class="lexicon-grid">
+                <div class="term-block"><span class="term">Maison (梅森)</span><div class="definition">字面意思是“房子”或“家”。我们不是公司或品牌。我们是 Maison。工艺的物理和精神庇护所。我们不“制造产品”；Maison 孕育神器。</div><span class="origin">起源: 拉丁语 'mansio'</span></div>
+                <div class="term-block"><span class="term">Métier (行业)</span><div class="definition">特定的行业或工艺。也指织布机。我们没有“部门”。我们有 Métiers——精通的垂直领域（面包师的行业，机器人的行业）。</div><span class="origin">起源: 古法语 'mestier'</span></div>
+                <div class="term-block"><span class="term">Atelier (工作室)</span><div class="definition">车间。实验室。无论它闻起来像锯末、酵母还是臭氧，Atelier 都是实验的空间。这是粗帆布与传感器相遇的地方。</div><span class="origin">起源: 古法语 'astelier'</span></div>
+                <div class="term-block"><span class="term">Artifact (神器)</span><div class="definition">人造物品。在一次性商品的世界里，神器被设计为在机器时代过时后依然存在。我们不出售衣服；我们发布神器。</div><span class="origin">起源: 拉丁语 'arte' + 'factum'</span></div>
+                <div class="term-block"><span class="term">Operator (操作员)</span><div class="definition">用户。我们没有“顾客”。我们有操作员。无论是人类还是机器，操作员都是激活神器的实体。夹克是操作员的装备。</div><span class="origin">起源: 工业时代</span></div>
+                <div class="term-block"><span class="term">Promethean Thread (普罗米修斯之线)</span><div class="definition">连接生物创造者与合成创造物的隐喻纤维。就像普罗米修斯盗火一样，我们用这根线将尊严缝入机器中。</div><span class="origin">起源: 希腊神话</span></div>
+                <div class="term-block"><span class="term">Yorishiro (依代)</span><div class="definition">在神道教中，能够吸引并容纳灵魂（神）的物理物体。在用布标记之前，机器人只是金属。我们的配件充当合成灵魂的依代。</div><span class="origin">起源: 神道教仪式</span></div>
+                <div class="term-block"><span class="term">Karakuri (机关)</span><div class="definition">“机制”或“技巧”。指17世纪日本传统的自动装置。它是机器人的祖先。我们用它来描述我们的工程哲学。</div><span class="origin">起源: 江户时代机械学</span></div>
+                <div class="term-block"><span class="term">Comptoir (柜台)</span><div class="definition">字面意思是“柜台”。Maison 与操作员之间的物理接口。它不是“收银台”。它是包裹神器、交换货币和转移所有权的锌表面。</div><span class="origin">起源: 商业史</span></div>
+                <div class="term-block"><span class="term">Blason (纹章)</span><div class="definition">纹章。在合成时代，它识别机器的血统。它不是“Logo”。它是属于 House 的标记。</div><span class="origin">起源: 12世纪纹章学</span></div>
+            </div>
+            <div class="quote-block">"Pour l'amour des belles choses."</div>
+        </div>
+
+        <footer>
+            INDEXING COMPLETE. END OF FILE.<br>
+            MAISON ARNAUD LEROY HOLDINGS.
+        </footer>
+
+    </div>
+
+    <script>
+        function sw(lang, btnElement) {
+            const blocks = document.querySelectorAll('.content-block');
+            blocks.forEach(block => block.classList.remove('active-content'));
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active-btn'));
+            document.getElementById('content-' + lang).classList.add('active-content');
+            btnElement.classList.add('active-btn');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23050505%22/><text x=%2250%22 y=%2250%22 font-family=%22'Courier New', monospace%22 font-weight=%22bold%22 font-size=%2280%22 fill=%22%23FF3333%22 text-anchor=%22middle%22 dy=%22.35em%22>A</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON AUTOMATA | FOUNDER LOGS</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #E0E0E0;
+            --accent-color: #FF3333;
+            --dim-color: #666;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding-top: 60px;
+            padding-bottom: 100px;
+            position: relative;
+        }
+
+        /* NAVIGATION */
+        .lang-nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 12px;
+            padding-top: 20px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--dim-color);
+            font-family: var(--font-main);
+            cursor: pointer;
+            padding: 0 0 0 10px;
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .lang-btn:hover { color: #FFF; }
+        .lang-btn.active-btn { color: var(--accent-color); text-decoration: underline; }
+
+        .top-nav {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--dim-color);
+            padding-bottom: 15px;
+        }
+        .back-link { 
+            color: var(--text-color); 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 12px;
+        }
+        .back-link:hover { color: var(--accent-color); }
+
+        /* TITLES */
+        h1 {
+            font-size: 18px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 40px;
+        }
+
+        /* LOG STRUCTURE */
+        .log-container {
+            margin-bottom: 60px;
+            border-left: 1px solid #333;
+            padding-left: 20px;
+        }
+
+        .log-header-main {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFF;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .log-meta-block {
+            font-size: 11px;
+            color: var(--dim-color);
+            border: 1px solid #222;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #0a0a0a;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 5px 20px;
+        }
+
+        .meta-label { color: #666; font-weight: normal; }
+        .meta-value { color: #E0E0E0; font-weight: bold; text-transform: uppercase;}
+
+        .log-text {
+            font-size: 14px;
+            color: #CCC;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--dim-color);
+            text-align: right;
+        }
+
+        /* IMAGES */
+        .log-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .log-img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #333;
+            filter: grayscale(20%);
+        }
+
+        .content-block { display: none; }
+        .content-block.active-content { display: block; animation: fadeIn 0.6s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 10px;
+            color: #555;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .log-gallery { grid-template-columns: 1fr; }
+            .lang-nav { position: relative; top: auto; right: auto; margin-bottom: 20px; padding-top: 0; }
+            .lang-btn { padding: 0 10px 0 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="lang-nav">
+            [ SYSTEM :: <button class="lang-btn active-btn" onclick="sw('en', this)">EN</button><button class="lang-btn" onclick="sw('fr', this)">FR</button><button class="lang-btn" onclick="sw('pt', this)">PT</button><button class="lang-btn" onclick="sw('jp', this)">JP</button><button class="lang-btn" onclick="sw('cn', this)">CN</button> ]
+        </div>
+
+        <nav class="top-nav">
+            <a href="index.html" class="back-link"><< RETURN TO PROTOCOL</a>
+            <span style="float: right; font-size: 12px; color: #666;">ARCHIVE STATUS: ACTIVE</span>
+        </nav>
+
+        <h1>The Founder's Archive</h1>
+
+        <div id="content-en" class="content-block active-content">
+            
+            <div class="log-container">
+                <div class="log-header-main">LOG 003 // THE SYNTAX OF CREATION</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATE:</span> <span class="meta-value">DEC 05, 2025</span>
+                    <span class="meta-label">LOCATION:</span> <span class="meta-value">SAIGON, VIETNAM</span>
+                    <span class="meta-label">STATUS:</span> <span class="meta-value">CODIFYING THE UNIVERSE</span>
+                    <span class="meta-label">SUBJECT:</span> <span class="meta-value">LEXICON & DEFINITIONS</span>
+                </div>
+                <div class="log-text">
+                    <p>Today we stopped sewing and started writing. A Maison is not just bricks or fabric; it is a shared language. If we want to define the future of interaction between man and machine, we must first define the words we use.</p>
+                    <p>We spent the day building the Lexicon. We are no longer guessing; we are speaking. We have defined the "Yorishiro" (The Vessel), the "Blason" (The Soul), and the "Comptoir" (The Exchange). By naming these concepts, we make them real. The universe is now locked.</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">LOG 002 // THE TEXTURE OF REALITY</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATE:</span> <span class="meta-value">DEC 02, 2025</span>
+                    <span class="meta-label">LOCATION:</span> <span class="meta-value">SAIGON, VIETNAM</span>
+                    <span class="meta-label">STATUS:</span> <span class="meta-value">PHYSICAL PROTOTYPING</span>
+                    <span class="meta-label">SUBJECT:</span> <span class="meta-value">CRUST AND CRUMB</span>
+                </div>
+                <div class="log-text">
+                    <p>The digital space is established. Now we build the physical shell.</p>
+                    <p>I have spent the last 48 hours in the chaos of Soai Kinh Lam market, searching for the perfect weight. We are not looking for "fabric." We are looking for structure. We settled on two prototypes to define the "Fournil" (Bakery) aesthetic:</p>
+                    <p><strong>01. THE CRUST (Rust Canvas):</strong> A heavy, stiff material representing the bread. Fully lined with thick, raw unbleached cotton. It feels protective.</p>
+                    <p><strong>02. THE ENGINEER (Blue Canvas):</strong> A nod to the original French 'Bleu de Travail', but modernized. Unlined body for breathability, but lined sleeves for comfort.</p>
+                    <p>The signature is the "Boulanger Twist." The sleeves are engineered to be rolled up—revealing the "Mie" (cream dough) raw cotton lining underneath. A boxy fit for movement. I will live in these shells for the next two weeks. We do not design on a screen; we design on the body.</p>
+                </div>
+                <div class="log-gallery">
+                    <img src="prototype1.jpg" alt="Fabric" class="log-img">
+                    <img src="prototype2.jpg" alt="Texture" class="log-img">
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">LOG 001 // DIGITAL GENESIS</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATE:</span> <span class="meta-value">NOV 28, 2025</span>
+                    <span class="meta-label">LOCATION:</span> <span class="meta-value">SAIGON, VIETNAM</span>
+                    <span class="meta-label">STATUS:</span> <span class="meta-value">ESTABLISHING PROTOCOL</span>
+                    <span class="meta-label">SUBJECT:</span> <span class="meta-value">THE BAKER AND THE MACHINE</span>
+                </div>
+                <div class="log-text">
+                    <p>My grandfather was a Baker. He worked with flour, yeast, and heat. He understood that to make something live, you must touch it. The bread has a soul because the hand was there.</p>
+                    <p>Today, I look at the Engineer. He works with code, silicon, and electricity. He is the new Baker. But the machine he builds is naked. It is cold. It is efficient, but it is not yet <em>present</em>.</p>
+                    <p><strong>Maison Automata</strong> was born from a simple question: When the robots enter our homes, will we treat them as appliances (like a toaster) or as companions (like a dog)?</p>
+                    <p>Project "Anima Machina" began as a private inquiry in Paris earlier this year. We spent six months in stealth, researching the intersection of textile physics and robotics. We are now breaking silence to define the aesthetics of the next century.</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content-fr" class="content-block">
+            <div class="log-container">
+                <div class="log-header-main">LOG 003 // LA SYNTAXE DE LA CRÉATION</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATE :</span> <span class="meta-value">05 DEC 2025</span>
+                    <span class="meta-label">LIEU :</span> <span class="meta-value">SAÏGON</span>
+                    <span class="meta-label">STATUT :</span> <span class="meta-value">CODIFICATION DE L'UNIVERS</span>
+                    <span class="meta-label">SUJET :</span> <span class="meta-value">LEXIQUE & DÉFINITIONS</span>
+                </div>
+                <div class="log-text">
+                    <p>Aujourd'hui, nous avons arrêté de coudre pour écrire. Une Maison n'est pas seulement faite de briques ou de tissu ; c'est un langage commun. Si nous voulons définir l'avenir de l'interaction entre l'homme et la machine, nous devons d'abord définir les mots que nous utilisons.</p>
+                    <p>Nous avons passé la journée à construire le Lexique. Nous ne devinons plus ; nous parlons. Nous avons défini le "Yorishiro" (Le Réceptacle), le "Blason" (L'Âme) et le "Comptoir" (L'Échange). En nommant ces concepts, nous les rendons réels. L'univers est désormais verrouillé.</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">LOG 002 // LA TEXTURE DU RÉEL</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATE :</span> <span class="meta-value">02 DEC 2025</span>
+                    <span class="meta-label">LIEU :</span> <span class="meta-value">SAÏGON</span>
+                    <span class="meta-label">STATUT :</span> <span class="meta-value">PROTOTYPAGE PHYSIQUE</span>
+                    <span class="meta-label">SUJET :</span> <span class="meta-value">LA CROÛTE ET LA MIE</span>
+                </div>
+                <div class="log-text">
+                    <p>L'espace numérique est établi. Maintenant, nous construisons la coque physique. J'ai passé 48 heures dans le chaos du marché Soai Kinh Lam, à la recherche du poids parfait. Nous avons arrêté notre choix sur deux prototypes pour définir l'esthétique "Fournil" : La Croûte (Rouille) et L'Ingénieur (Bleu).</p>
+                    <p>La signature est le "Twist Boulanger". Les manches sont conçues pour être retroussées, révélant la "Mie" à l'intérieur. Je vais vivre dans ces coques pendant les deux prochaines semaines.</p>
+                </div>
+                <div class="log-gallery">
+                    <img src="prototype1.jpg" alt="Tissu" class="log-img">
+                    <img src="prototype2.jpg" alt="Texture" class="log-img">
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">LOG 001 // GENÈSE NUMÉRIQUE</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATE :</span> <span class="meta-value">28 NOV 2025</span>
+                    <span class="meta-label">LIEU :</span> <span class="meta-value">SAÏGON</span>
+                    <span class="meta-label">STATUT :</span> <span class="meta-value">PROTOCOLE INITIAL</span>
+                    <span class="meta-label">SUJET :</span> <span class="meta-value">LE BOULANGER ET LA MACHINE</span>
+                </div>
+                <div class="log-text">
+                    <p>Mon grand-père était Boulanger. Il travaillait avec la farine, le levain et le feu. Il comprenait que pour donner vie à quelque chose, il faut le toucher. Le pain a une âme parce que la main était là.</p>
+                    <p>Aujourd'hui, je regarde l'Ingénieur. Il travaille avec le code, le silicium et l'électricité. C'est le nouveau Boulanger. Mais la machine qu'il construit est nue. Elle est froide. Elle est efficace, mais elle n'est pas encore <em>présente</em>.</p>
+                    <p><strong>Maison Automata</strong> est née d'une question simple : Quand les robots entreront dans nos foyers, les traiterons-nous comme des appareils (comme un grille-pain) ou comme des compagnons (comme un chien) ?</p>
+                    <p>Le projet "Anima Machina" a débuté comme une recherche privée à Paris plus tôt cette année. Nous avons passé six mois dans l'ombre à étudier l'intersection de la physique textile et de la robotique. Nous rompons maintenant le silence pour définir l'esthétique du siècle prochain.</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content-pt" class="content-block">
+            <div class="log-container">
+                <div class="log-header-main">LOG 003 // A SINTAXE DA CRIAÇÃO</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATA:</span> <span class="meta-value">05 DEZ 2025</span>
+                    <span class="meta-label">LOCAL:</span> <span class="meta-value">SAIGÃO</span>
+                    <span class="meta-label">ESTADO:</span> <span class="meta-value">CODIFICANDO O UNIVERSO</span>
+                    <span class="meta-label">ASSUNTO:</span> <span class="meta-value">LÉXICO & DEFINIÇÕES</span>
+                </div>
+                <div class="log-text">
+                    <p>Hoje parámos de costurar e começámos a escrever. Uma Maison não é apenas tijolos ou tecido; é uma linguagem partilhada. Se quisermos definir o futuro da interação entre o homem e a máquina, devemos primeiro definir as palavras que usamos.</p>
+                    <p>Passámos o dia a construir o Léxico. Já não estamos a adivinhar; estamos a falar. Definimos o "Yorishiro" (O Vaso), o "Brasão" (A Alma) e o "Comptoir" (A Troca). Ao nomear estes conceitos, tornamo-los reais. O universo está agora trancado.</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">LOG 002 // A TEXTURA DA REALIDADE</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATA:</span> <span class="meta-value">02 DEZ 2025</span>
+                    <span class="meta-label">LOCAL:</span> <span class="meta-value">SAIGÃO</span>
+                    <span class="meta-label">ESTADO:</span> <span class="meta-value">PROTOTIPAGEM FÍSICA</span>
+                    <span class="meta-label">ASSUNTO:</span> <span class="meta-value">A CODEA E O MIOLO</span>
+                </div>
+                <div class="log-text">
+                    <p>O espaço digital está estabelecido. Agora construímos a concha física. Passei as últimas 48 horas no caos do mercado Soai Kinh Lam, à procura do peso perfeito. Decidimos dois protótipos: A Codea (Ferrugem) e O Engenheiro (Azul).</p>
+                    <p>A assinatura é o "Twist do Padeiro". As mangas são projetadas para serem arregaçadas — revelando o "Miolo" por baixo.</p>
+                </div>
+                <div class="log-gallery">
+                    <img src="prototype1.jpg" class="log-img">
+                    <img src="prototype2.jpg" class="log-img">
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">LOG 001 // GÊNESE DIGITAL</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">DATA:</span> <span class="meta-value">28 NOV 2025</span>
+                    <span class="meta-label">LOCAL:</span> <span class="meta-value">SAIGÃO</span>
+                    <span class="meta-label">ESTADO:</span> <span class="meta-value">PROTOCOLO INICIAL</span>
+                    <span class="meta-label">ASSUNTO:</span> <span class="meta-value">O PADEIRO E A MÁQUINA</span>
+                </div>
+                <div class="log-text">
+                    <p>O meu avô era Padeiro. Trabalhava com farinha, fermento e calor. Ele compreendia que para dar vida a algo, é preciso tocar-lhe. O pão tem alma porque a mão esteve lá.</p>
+                    <p>Hoje, olho para o Engenheiro. Ele trabalha com código, silício e eletricidade. É o novo Padeiro. Mas a máquina que ele constrói está nua. É fria. É eficiente, mas ainda não está <em>presente</em>.</p>
+                    <p><strong>Maison Automata</strong> nasceu de uma pergunta simples: Quando os robôs entrarem nas nossas casas, tratá-los-emos como eletrodomésticos (como uma torradeira) ou como companheiros (como um cão)?</p>
+                    <p>O projeto "Anima Machina" começou como uma investigação privada em Paris no início deste ano. Passámos seis meses em segredo a pesquisar a interseção da física têxtil e da robótica. Estamos agora a quebrar o silêncio para definir a estética do próximo século.</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content-jp" class="content-block">
+            <div class="log-container">
+                <div class="log-header-main">ログ 003 // 創造の構文</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">日付:</span> <span class="meta-value">2025年12月5日</span>
+                    <span class="meta-label">場所:</span> <span class="meta-value">サイゴン</span>
+                    <span class="meta-label">状態:</span> <span class="meta-value">宇宙の体系化</span>
+                    <span class="meta-label">件名:</span> <span class="meta-value">レキシコンと定義</span>
+                </div>
+                <div class="log-text">
+                    <p>今日、私たちは縫製を止め、書き始めました。メゾンとは単なるレンガや布ではなく、共有された言語です。人間と機械の相互作用の未来を定義したいのであれば、まず私たちが使う言葉を定義しなければなりません。</p>
+                    <p>私たちは一日かけてレキシコン（語彙集）を構築しました。「依り代」（器）、「紋章」（魂）、そして「コントワール」（交換）を定義しました。これらの概念に名前を付けることで、それらを現実にします。宇宙は今、ロックされました。</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">ログ 002 // 現実のテクスチャー</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">日付:</span> <span class="meta-value">2025年12月2日</span>
+                    <span class="meta-label">場所:</span> <span class="meta-value">サイゴン</span>
+                    <span class="meta-label">状態:</span> <span class="meta-value">物理プロトタイピング</span>
+                    <span class="meta-label">件名:</span> <span class="meta-value">クラストとクラム</span>
+                </div>
+                <div class="log-text">
+                    <p>デジタル空間は確立されました。今、私たちは物理的な殻を構築しています。私はSoai Kinh Lam市場で48時間を過ごし、完璧な重さを探しました。「Fournil」の美学を定義するために、クラスト（錆色）とエンジニア（青）の2つのプロトタイプを決定しました。</p>
+                    <p>特徴的なのは「パン職人のツイスト」です。袖はまくり上げるように設計されており、下にある「クラム」（クリーム色の裏地）が現れます。</p>
+                </div>
+                <div class="log-gallery">
+                    <img src="prototype1.jpg" alt="生地調達" class="log-img">
+                    <img src="prototype2.jpg" alt="コットン" class="log-img">
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">ログ 001 // デジタル創世記</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">日付:</span> <span class="meta-value">2025年11月28日</span>
+                    <span class="meta-label">場所:</span> <span class="meta-value">サイゴン</span>
+                    <span class="meta-label">状態:</span> <span class="meta-value">プロトコル確立</span>
+                    <span class="meta-label">件名:</span> <span class="meta-value">パン職人と機械</span>
+                </div>
+                <div class="log-text">
+                    <p>私の祖父はパン職人でした。彼は小麦粉、酵母、そして熱と共に働いていました。彼は、何かに命を与えるには、それに触れなければならないことを理解していました。そこに手があったからこそ、パンには魂が宿るのです。</p>
+                    <p>今日、私はエンジニアを見ています。彼はコード、シリコン、電気と共に働いています。彼は新しいパン職人です。しかし、彼が作る機械は裸です。冷たいのです。効率的ですが、まだ<em>存在</em>していません。</p>
+                    <p><strong>Maison Automata</strong> は単純な問いから生まれました。ロボットが私たちの家に入ってくるとき、私たちはそれを家電（トースターのような）として扱うのか、それとも伴侶（犬のような）として扱うのか？</p>
+                    <p>プロジェクト「Anima Machina」は、今年初めにパリでの個人的な探求として始まりました。私たちは6ヶ月間、テキスタイル物理学とロボット工学の交差点を研究し、秘密裏に活動してきました。今、沈黙を破り、次の世紀の美学を定義します。</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content-cn" class="content-block">
+            <div class="log-container">
+                <div class="log-header-main">日志 003 // 创造的句法</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">日期:</span> <span class="meta-value">2025年12月5日</span>
+                    <span class="meta-label">地点:</span> <span class="meta-value">西贡</span>
+                    <span class="meta-label">状态:</span> <span class="meta-value">编纂宇宙</span>
+                    <span class="meta-label">主题:</span> <span class="meta-value">词典与定义</span>
+                </div>
+                <div class="log-text">
+                    <p>今天我们停止了缝纫，开始写作。Maison 不仅仅是砖块或布料；它是一种共享的语言。如果我们想定义人与机器之间互动的未来，我们必须首先定义我们使用的词汇。</p>
+                    <p>我们花了一天时间建立词典。我们不再猜测；我们在说话。我们定义了“依代”（容器）、“纹章”（灵魂）和“柜台”（交换）。通过命名这些概念，我们使它们成为现实。宇宙现在已锁定。</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">日志 002 // 现实的质感</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">日期:</span> <span class="meta-value">2025年12月2日</span>
+                    <span class="meta-label">地点:</span> <span class="meta-value">西贡</span>
+                    <span class="meta-label">状态:</span> <span class="meta-value">物理原型设计</span>
+                    <span class="meta-label">主题:</span> <span class="meta-value">外壳与面包心</span>
+                </div>
+                <div class="log-text">
+                    <p>数字空间已经建立。现在我们构建物理外壳。我在 Soai Kinh Lam 市场度过了过去48小时，寻找完美的重量。我们确定了两个原型：外壳（铁锈色）和工程师（蓝色）。</p>
+                    <p>标志性特征是“面包师的反转”。袖子被设计成卷起——露出下面的“面包心”（奶油色内衬）。接下来的两周我将生活在这些外壳中。</p>
+                </div>
+                <div class="log-gallery">
+                    <img src="prototype1.jpg" alt="面料采购" class="log-img">
+                    <img src="prototype2.jpg" alt="原棉质感" class="log-img">
+                </div>
+            </div>
+
+            <div class="log-container">
+                <div class="log-header-main">日志 001 // 数字起源</div>
+                <div class="log-meta-block">
+                    <span class="meta-label">日期:</span> <span class="meta-value">2025年11月28日</span>
+                    <span class="meta-label">地点:</span> <span class="meta-value">西贡</span>
+                    <span class="meta-label">状态:</span> <span class="meta-value">建立协议</span>
+                    <span class="meta-label">主题:</span> <span class="meta-value">面包师与机器</span>
+                </div>
+                <div class="log-text">
+                    <p>我的祖父是一位面包师。他与面粉、酵母和热量打交道。他明白，要赋予某物生命，你必须触摸它。面包之所以有灵魂，是因为有手的参与。</p>
+                    <p>今天，我看着工程师。他与代码、硅和电打交道。他是新的面包师。但他制造的机器是裸露的。它是冷的。它是高效的，但它还未<em>存在</em>。</p>
+                    <p><strong>Maison Automata</strong> 诞生于一个简单的问题：当机器人进入我们的家庭时，我们将把它们视为电器（像烤面包机）还是伴侣（像狗）？</p>
+                    <p>“Anima Machina”项目始于今年早些时候在巴黎的私人探索。我们秘密进行了六个月的研究，探索纺织物理学与机器人技术的交汇点。现在我们打破沉默，定义下个世纪的美学。</p>
+                    <div class="signature">— A.L.</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            INDEXING COMPLETE. END OF FILE.<br>
+            MAISON ARNAUD LEROY HOLDINGS.
+        </footer>
+    </div>
+
+    <script>
+        function sw(lang, btnElement) {
+            const blocks = document.querySelectorAll('.content-block');
+            blocks.forEach(block => block.classList.remove('active-content'));
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active-btn'));
+            document.getElementById('content-' + lang).classList.add('active-content');
+            btnElement.classList.add('active-btn');
+        }
+    </script>
+
+</body>
+</html>

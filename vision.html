@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23050505%22/><text x=%2250%22 y=%2250%22 font-family=%22'Courier New', monospace%22 font-weight=%22bold%22 font-size=%2280%22 fill=%22%23FF3333%22 text-anchor=%22middle%22 dy=%22.35em%22>A</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON AUTOMATA | THE ARCHITECTURE</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #E0E0E0;
+            --accent-color: #FF3333;
+            --dim-color: #666;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding-top: 60px;
+            padding-bottom: 100px;
+            position: relative;
+        }
+
+        /* NAVIGATION */
+        .lang-nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 12px;
+            padding-top: 20px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--dim-color);
+            font-family: var(--font-main);
+            cursor: pointer;
+            padding: 0 0 0 10px;
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .lang-btn:hover { color: #FFF; }
+        .lang-btn.active-btn { color: var(--accent-color); text-decoration: underline; }
+
+        .top-nav {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--dim-color);
+            padding-bottom: 15px;
+        }
+        .back-link { 
+            color: var(--text-color); 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 12px;
+        }
+        .back-link:hover { color: var(--accent-color); }
+
+        /* TITLES */
+        h1 {
+            font-size: 18px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 14px;
+            color: #FFF;
+            margin-top: 60px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* HARMONIZED LOG STRUCTURE */
+        .log-container {
+            margin-bottom: 60px;
+            border-left: 1px solid #333;
+            padding-left: 20px;
+        }
+
+        .log-header-main {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFF;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .log-meta-block {
+            font-size: 11px;
+            color: var(--dim-color);
+            border: 1px solid #222;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #0a0a0a;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 5px 20px;
+        }
+
+        .meta-label { color: #666; font-weight: normal; }
+        .meta-value { color: #E0E0E0; font-weight: bold; text-transform: uppercase;}
+
+        .vision-text {
+            font-size: 14px;
+            color: #CCC;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--dim-color);
+            text-align: right;
+        }
+
+        /* IMAGES */
+        .log-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .log-img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #333;
+            filter: grayscale(20%);
+        }
+
+        /* TIMELINE */
+        .timeline {
+            border-left: 1px solid #333; 
+            margin-left: 10px; 
+            padding-left: 20px; 
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        .timeline-item { margin-bottom: 20px; }
+        .timeline-date { color: #666; font-size: 10px; display: block;}
+        .timeline-title { color: #E0E0E0; font-size: 12px; }
+        .timeline-active { color: #FFF; font-weight: bold; }
+        .active-dot { color: var(--accent-color); font-size: 10px;}
+
+        /* DOMAIN GRID */
+        .domain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .domain-item {
+            font-size: 11px;
+            color: var(--dim-color);
+            border: 1px solid #222;
+            padding: 10px;
+            transition: 0.2s;
+        }
+
+        .domain-item:hover {
+            border-color: var(--accent-color);
+            color: #FFF;
+        }
+
+        .category-label {
+            font-size: 10px;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .content-block { display: none; }
+        .content-block.active-content { display: block; animation: fadeIn 0.6s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 10px;
+            color: #555;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .domain-grid { grid-template-columns: 1fr; }
+            .log-gallery { grid-template-columns: 1fr; }
+            .lang-nav { position: relative; top: auto; right: auto; margin-bottom: 20px; padding-top: 0; }
+            .lang-btn { padding: 0 10px 0 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            [ SYSTEM :: <button class="lang-btn active-btn" onclick="sw('en', this)">EN</button><button class="lang-btn" onclick="sw('fr', this)">FR</button><button class="lang-btn" onclick="sw('pt', this)">PT</button><button class="lang-btn" onclick="sw('jp', this)">JP</button><button class="lang-btn" onclick="sw('cn', this)">CN</button> ]
+        </div>
+
+        <nav class="top-nav">
+            <a href="index.html" class="back-link"><< RETURN TO PROTOCOL</a>
+            <span style="float: right; font-size: 12px; color: #666;">ARCHIVE: ARCHITECTURE</span>
+        </nav>
+
+        <div id="content-en" class="content-block active-content">
+            <h1>The Timeline (Proof of History)</h1>
+            <div class="timeline">
+                <div class="timeline-item"><span class="timeline-date">MAY 2025 [PARIS]</span><span class="timeline-title">CONCEPT INCEPTION: THE SOUL GIVER</span></div>
+                <div class="timeline-item"><span class="timeline-date">AUG 2025 [LISBON]</span><span class="timeline-title">MATERIAL R&D: LINEN VS CHASSIS</span></div>
+                <div class="timeline-item"><span class="timeline-date">NOV 2025 [SAIGON]</span><span class="timeline-title">DIGITAL GENESIS</span></div>
+                <div class="timeline-item"><span class="active-dot">● </span><span style="color: #FF3333; font-size: 10px;">DEC 2025 [SAIGON]</span><br><span class="timeline-active">PHYSICAL PROTOTYPING (CURRENT)</span></div>
+            </div>
+            
+            <h1>The Architecture (Domain Index)</h1>
+            <p class="vision-text">To build the future, one must first define it. These are the pillars of our exploration and some of its coordinates.</p>
+        </div>
+
+        <div id="content-fr" class="content-block">
+            <h1>La Chronologie (Preuve d'Histoire)</h1>
+            <div class="timeline">
+                <div class="timeline-item"><span class="timeline-date">MAI 2025 [PARIS]</span><span class="timeline-title">INCEPTION DU CONCEPT</span></div>
+                <div class="timeline-item"><span class="timeline-date">AOÛT 2025 [LISBONNE]</span><span class="timeline-title">R&D MATÉRIELLE</span></div>
+                <div class="timeline-item"><span class="timeline-date">NOV 2025 [SAÏGON]</span><span class="timeline-title">GENÈSE NUMÉRIQUE</span></div>
+                <div class="timeline-item"><span class="active-dot">● </span><span style="color: #FF3333; font-size: 10px;">DÉC 2025</span><br><span class="timeline-active">PROTOTYPAGE PHYSIQUE (ACTUEL)</span></div>
+            </div>
+            <h1>L'Architecture (Index des Domaines)</h1>
+            <p class="vision-text">Pour bâtir le futur, il faut d'abord le définir. Voici les piliers de notre exploration et quelques-unes de ses coordonnées.</p>
+        </div>
+
+        <div id="content-pt" class="content-block">
+            <h1>A Cronologia (Prova de História)</h1>
+            <div class="timeline">
+                <div class="timeline-item"><span class="timeline-date">MAIO 2025 [PARIS]</span><span class="timeline-title">CONCEÇÃO</span></div>
+                <div class="timeline-item"><span class="timeline-date">AGO 2025 [LISBOA]</span><span class="timeline-title">I&D MATERIAL</span></div>
+                <div class="timeline-item"><span class="timeline-date">NOV 2025 [SAIGÃO]</span><span class="timeline-title">GÊNESE DIGITAL</span></div>
+                <div class="timeline-item"><span class="active-dot">● </span><span style="color: #FF3333; font-size: 10px;">DEZ 2025</span><br><span class="timeline-active">PROTOTIPAGEM (ATUAL)</span></div>
+            </div>
+            <h1>A Arquitetura (Índice de Domínios)</h1>
+            <p class="vision-text">Para construir o futuro, é preciso primeiro defini-lo. Estes são os pilares da nossa exploração e algumas das suas coordenadas.</p>
+        </div>
+
+        <div id="content-jp" class="content-block">
+            <h1>年表 (歴史の証明)</h1>
+            <div class="timeline">
+                <div class="timeline-item"><span class="timeline-date">2025年5月 [パリ]</span><span class="timeline-title">概念の始まり</span></div>
+                <div class="timeline-item"><span class="timeline-date">2025年8月 [リスボン]</span><span class="timeline-title">素材の研究開発</span></div>
+                <div class="timeline-item"><span class="timeline-date">2025年11月 [サイゴン]</span><span class="timeline-title">デジタル創世記</span></div>
+                <div class="timeline-item"><span class="active-dot">● </span><span style="color: #FF3333; font-size: 10px;">2025年12月</span><br><span class="timeline-active">プロトタイピング (現在)</span></div>
+            </div>
+            <h1>アーキテクチャ (ドメイン索引)</h1>
+            <p class="vision-text">未来を築くためには、まずそれを定義しなければなりません。これらは私たちの探求の柱であり、その座標の一部です。</p>
+        </div>
+
+        <div id="content-cn" class="content-block">
+            <h1>时间线 (历史证明)</h1>
+            <div class="timeline">
+                <div class="timeline-item"><span class="timeline-date">2025年5月 [巴黎]</span><span class="timeline-title">概念初始</span></div>
+                <div class="timeline-item"><span class="timeline-date">2025年8月 [里斯本]</span><span class="timeline-title">材料研发</span></div>
+                <div class="timeline-item"><span class="timeline-date">2025年11月 [西贡]</span><span class="timeline-title">数字起源</span></div>
+                <div class="timeline-item"><span class="active-dot">● </span><span style="color: #FF3333; font-size: 10px;">2025年12月</span><br><span class="timeline-active">物理原型 (当前)</span></div>
+            </div>
+            <h1>架构 (域名索引)</h1>
+            <p class="vision-text">要构建未来，首先必须定义它。这是我们探索的支柱以及其中的一些坐标。</p>
+        </div>
+
+        <h2>Division 01: The Institution (Prestige)</h2>
+        <div class="domain-grid">
+            <div class="domain-item"><span class="category-label">PRIMARY</span>maisonautomata.com</div>
+            <div class="domain-item"><span class="category-label">FRENCH</span>hauterobotique.com</div>
+            <div class="domain-item"><span class="category-label">GLOBAL</span>couturerobotique.com</div>
+            <div class="domain-item"><span class="category-label">HERITAGE</span>maisondesautomates.com</div>
+        </div>
+
+        <h2>Division 02: The Technique (Bespoke)</h2>
+        <div class="domain-grid">
+            <div class="domain-item"><span class="category-label">FUNCTIONAL</span>androidtailoring.com</div>
+            <div class="domain-item"><span class="category-label">CRAFT</span>tailleurandroid.com</div>
+            <div class="domain-item"><span class="category-label">CUSTOM</span>androidbespoke.com</div>
+            <div class="domain-item"><span class="category-label">MASTER</span>theirontailor.com</div>
+        </div>
+
+        <h2>Division 03: The Diffusion (Ready-to-Wear)</h2>
+        <div class="domain-grid">
+            <div class="domain-item"><span class="category-label">DIFFUSION LINE</span>botaporter.com</div>
+            <div class="domain-item"><span class="category-label">COMMERCIAL</span>coutureforrobots.com</div>
+            <div class="domain-item"><span class="category-label">CATEGORY</span>fashionforrobots.com</div>
+            <div class="domain-item"><span class="category-label">RETAIL</span>automatfashion.com</div>
+        </div>
+
+        <h2>Division 04: The Material (Animism)</h2>
+        <div class="domain-grid">
+            <div class="domain-item"><span class="category-label">ARTIFACT</span>leyorishiro.com</div>
+            <div class="domain-item"><span class="category-label">SOUL</span>animamachina.com</div>
+            <div class="domain-item"><span class="category-label">HERALDRY</span>cyberheraldry.com</div>
+            <div class="domain-item"><span class="category-label">IDENTITY</span>digitalblason.com</div>
+        </div>
+
+        <footer>
+            INDEXING COMPLETE. END OF FILE.<br>
+            MAISON ARNAUD LEROY HOLDINGS.
+        </footer>
+    </div>
+    <script>function sw(l,b){document.querySelectorAll('.content-block').forEach(x=>x.classList.remove('active-content'));document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active-btn'));document.getElementById('content-'+l).classList.add('active-content');b.classList.add('active-btn');}</script>
+</body>
+</html>
